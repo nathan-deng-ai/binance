@@ -1,9 +1,10 @@
 {
   "compileOnSave": true,
   "compilerOptions": {
+    "composite": true,
     "allowJs": true,
-    "target": "es6",
-    "module": "commonjs",
+    "target": "ESNext",
+    "module": "ESNext",
     "moduleResolution": "node",
     "declaration": true,
     "removeComments": false,
