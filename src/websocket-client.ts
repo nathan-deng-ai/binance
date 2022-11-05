@@ -1,5 +1,4 @@
 import { AxiosRequestConfig } from 'axios';
-import { EventEmitter } from 'events';
 import WebSocket from 'isomorphic-ws';
 
 import { DefaultLogger } from './logger';
@@ -26,6 +25,7 @@ import { terminateWs } from './util/ws-utils';
 
 import WsStore from './util/WsStore';
 import { CoinMClient } from './coinm-client';
+import EventEmitter2 from "eventemitter2";
 
 const wsBaseEndpoints: Record<WsMarket, string> = {
   spot: 'wss://stream.binance.com:9443',
@@ -168,7 +168,7 @@ export function parseRawWsMessage(event: any) {
   return event;
 }
 
-export class WebsocketClient extends EventEmitter {
+export class WebsocketClient extends EventEmitter2 {
   private logger: typeof DefaultLogger;
   private options: WebsocketClientOptions;
   private wsStore: WsStore;
