@@ -315,6 +315,7 @@ export interface WsMessagePartialBookDepthEventRaw extends WsSharedBase {
 
 export interface WsMessagePartialBookDepthEventFormatted extends WsSharedBase {
   eventType: 'partialBookDepth';
+  symbol: string;
   lastUpdateId: number;
   bids: OrderBookRowFormatted[];
   asks: OrderBookRowFormatted[];
